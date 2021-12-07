@@ -1,0 +1,68 @@
+import turtle
+turtle.speed(10)
+
+def draw_outline(x_outline,y_outline):
+    turtle.penup()
+    turtle.goto(x_outline,y_outline)
+    turtle.setheading(0)
+    turtle.pensize(3)
+    turtle.pencolor('black')
+    turtle.pendown()
+    turtle.begin_fill()
+    turtle.fillcolor('yellow')
+    turtle.circle(300)
+    turtle.end_fill()
+
+def draw_eyes(x_eye,y_eye):
+    turtle.penup()
+    turtle.goto(x_eye,y_eye)
+    turtle.pensize(3)
+    turtle.pencolor('black')
+    turtle.pendown()
+    turtle.begin_fill()
+    turtle.fillcolor('white')
+    turtle.circle(40)
+    turtle.end_fill()
+    turtle.penup()
+    turtle.goto(x_eye,(y_eye+20))
+    turtle.pendown()
+    turtle.begin_fill()
+    turtle.fillcolor('black')
+    turtle.circle(20)
+    turtle.end_fill()
+    turtle.penup()
+    turtle.goto(x_eye+200,y_eye)
+    turtle.pensize(3)
+    turtle.pencolor('black')
+    turtle.pendown()
+    turtle.begin_fill()
+    turtle.fillcolor('white')
+    turtle.circle(40)
+    turtle.end_fill()
+    turtle.penup()
+    turtle.goto(x_eye+200,(y_eye+20))
+    turtle.pendown()
+    turtle.begin_fill()
+    turtle.fillcolor('black')
+    turtle.circle(20)
+    turtle.end_fill()
+
+def draw_smile(x_smile,y_smile):
+    turtle.penup()
+    turtle.goto(x_smile,y_smile)
+    turtle.setheading(270)
+    turtle.pendown() 
+    turtle.pensize(10)
+    turtle.pencolor('red')
+    turtle.circle(100,180)
+
+def draw_face(x_face,y_face):
+    draw_outline(x_face,y_face)
+    draw_eyes((x_face-100),(y_face+380))
+    draw_smile((x_face-100),(y_face+225))
+
+draw_face(100,0)
+draw_face(-300,-300)
+
+
+turtle.exitonclick()
